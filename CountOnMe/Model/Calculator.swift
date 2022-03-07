@@ -23,7 +23,7 @@ final class Calculator {
     var elements: [String] {
         return textCalculator.split(separator: " ").map { "\($0)" }
     }
-    // Error check computed variables
+    // ERROR CHECH COMPUTED VARIABLES
     var expressionIsCorrect: Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "*"
     }
@@ -34,7 +34,6 @@ final class Calculator {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "*"
     }
     var expressionHaveResult: Bool {
-        //return elements.firstIndex(of: "=") != nil
         return textCalculator.contains("=")
     }
     var divideByZero: Bool {
@@ -56,39 +55,39 @@ extension Calculator {
         }
         textCalculator.append(numberText)
     }
-    /// Add Plus Operand
+    /// Add + Operand
     func tappedAdditionButton() {
         if canAddOperator {
             textCalculator.append(" + ")
         } else {
-            delegateDisplay?.presentAlert(message: "Un operateur est déja mis !")
+            delegateDisplay?.presentAlert(message: "Un opérateur est déja mis !")
         }
     }
-    /// Add Minus Operand
+    /// Add - Operand
     func tappedSubstractionButton() {
         if canAddOperator {
             textCalculator.append(" - ")
         } else {
-            delegateDisplay?.presentAlert(message: "Un operateur est déja mis !")
+            delegateDisplay?.presentAlert(message: "Un opérateur est déja mis !")
         }
     }
-    /// Add Multiplicate Operand
+    /// Add x Operand
     func tappedMultiplicateButton() {
         if canAddOperator {
             textCalculator.append(" * ")
         } else {
-            delegateDisplay?.presentAlert(message: "Un operateur est déja mis !")
+            delegateDisplay?.presentAlert(message: "Un opérateur est déja mis !")
         }
     }
-    /// Add Divide Operand
+    /// Add / Operand
     func tappedDivideButton() {
         if canAddOperator {
             textCalculator.append(" / ")
         } else {
-            delegateDisplay?.presentAlert(message: "Un operateur est déja mis !")
+            delegateDisplay?.presentAlert(message: "Un opérateur est déja mis !")
         }
     }
-    /// Reset function
+    /// Reset the function
     func resetButton() {
         textCalculator = ""
     }
@@ -103,11 +102,11 @@ extension Calculator {
             return
         }
         guard expressionHaveEnoughElement else {
-            delegateDisplay?.presentAlert(message: "Ajouter un opérateur et un autre chiffre !")
+            delegateDisplay?.presentAlert(message: "Ajoutez un opérateur et/ou un autre chiffre !")
             return
         }
         guard divideByZero else {
-            delegateDisplay?.presentAlert(message: "Division par zéro impossible !")
+            delegateDisplay?.presentAlert(message: "La division par zéro impossible car tout nombre divisé par 0 a pour résultat 0 !")
             textCalculator = "Error"
             return
         }

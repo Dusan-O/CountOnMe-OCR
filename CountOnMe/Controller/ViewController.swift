@@ -4,7 +4,6 @@
 //
 //  Created by Dusan Orescanin on 24/02/2022.
 //
-
 import UIKit
 
 final class ViewController: UIViewController {
@@ -15,6 +14,7 @@ final class ViewController: UIViewController {
 
     // MARK: - IBOutlet
 
+    @IBOutlet weak var ScrollView: UIScrollView!
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var resetTextButton: UIButton!
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ final class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction func tappedNumberButton(_ sender: UIButton) {
-        resetTextButton.setTitle("C", for: .normal)
+        // resetTextButton.setTitle("C", for: .normal)
         guard let numberText = sender.title(for: .normal) else { return }
         calculator.tappedNumberButton(numberText: numberText)
     }

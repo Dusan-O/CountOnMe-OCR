@@ -51,7 +51,7 @@ class CalculatorTestCase: XCTestCase {
         XCTAssertFalse(calculator.expressionHaveEnoughElement)
     }
 
-// MARK: - Ajout des opérateurs
+// MARK: - Add operators
 
     // Test add Plus Operand
     func testGivenTextCalculatorEqualPlus_WhenAddingPlusOperator_ThenTextCalculatorEqualPLus() {
@@ -101,7 +101,7 @@ class CalculatorTestCase: XCTestCase {
     }
 
 // MARK: - Test boutton AC
-
+    
     func testGivenTextCalculatorIs25Plus7_WhenClearTextCalculator_ThenTextCalculatorIsEmpty() {
         calculator.resetButton()
         XCTAssertEqual(calculator.textCalculator, "")
