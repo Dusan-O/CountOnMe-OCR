@@ -15,7 +15,7 @@ class CalculatorTestCase: XCTestCase {
         calculator = Calculator()
     }
 
-// MARK: - add numbers
+// MARK: - Add numbers
 
     func testGivenElementsIsEmpty_WhenAdding23_ThenElementsContains23() {
         calculator.tappedNumberButton(numberText: "23")
@@ -29,7 +29,7 @@ class CalculatorTestCase: XCTestCase {
         calculator.textCalculator = "25"
         XCTAssertTrue(calculator.canAddOperator)
     }
-    // Test add operand when operand was previously added
+    // Test add + operand when operand was previously added
     func testGivenTestCalculatorHaveMinusOperand_WhenAddingMinusOperator_ThenCanAddOperatorIsFalse() {
         calculator.textCalculator = "-"
         calculator.tappedSubstractionButton()

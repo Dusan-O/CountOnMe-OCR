@@ -23,7 +23,7 @@ final class Calculator {
     var elements: [String] {
         return textCalculator.split(separator: " ").map { "\($0)" }
     }
-    // ERROR CHECH COMPUTED VARIABLES
+    /// ERROR CHECH COMPUTED VARIABLES
     var expressionIsCorrect: Bool {
         return elements.last != "+" && elements.last != "-" && elements.last != "/" && elements.last != "*"
     }
@@ -98,7 +98,7 @@ extension Calculator {
 extension Calculator {
     func operationResult() {
         guard expressionIsCorrect else {
-            delegateDisplay?.presentAlert(message: "Entrez une expression correcte !")
+            delegateDisplay?.presentAlert(message: "Entrez une expression correcte svp !")
             return
         }
         guard expressionHaveEnoughElement else {
@@ -106,7 +106,7 @@ extension Calculator {
             return
         }
         guard divideByZero else {
-            delegateDisplay?.presentAlert(message: "La division par zéro impossible car tout nombre divisé par 0 a pour résultat 0 !")
+            delegateDisplay?.presentAlert(message: "La division par zéro impossible car tout nombre divisé par 0 a pour résultat 0, rappelez vous des cours de mathématiques en école !")
             textCalculator = "Error"
             return
         }

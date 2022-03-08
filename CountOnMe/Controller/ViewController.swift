@@ -27,31 +27,32 @@ final class ViewController: UIViewController {
 
 extension ViewController {
     @IBAction func tappedNumberButton(_ sender: UIButton) {
-        // resetTextButton.setTitle("C", for: .normal)
+        /// If needed to change AC to C when used
+        /// resetTextButton.setTitle("C", for: .normal)
         guard let numberText = sender.title(for: .normal) else { return }
         calculator.tappedNumberButton(numberText: numberText)
     }
-
+    /// + btn
     @IBAction func tappedAdditionButton(_ sender: UIButton) {
         calculator.tappedAdditionButton()
     }
-
+    /// - btn
     @IBAction func tappedSubstractionButton(_ sender: UIButton) {
         calculator.tappedSubstractionButton()
     }
-
+    /// X btn
     @IBAction func tappedMultiplicateButton(_ sender: UIButton) {
         calculator.tappedMultiplicateButton()
     }
-
+    /// / btn
     @IBAction func tappedDivideButton(_ sender: UIButton) {
         calculator.tappedDivideButton()
     }
-
+    /// = btn
     @IBAction func tappedEqualButton(_ sender: UIButton) {
         calculator.operationResult()
     }
-
+    /// Reset AC btn
     @IBAction func resetButton(_ sender: UIButton) {
         calculator.resetButton()
         resetTextButton.setTitle("AC", for: .normal)
@@ -60,7 +61,7 @@ extension ViewController {
 }
 
 // MARK: - Alert Action
-
+/// Alert message on the calculator screen
 extension ViewController: DisplayDelegate {
     func presentAlert(message: String) {
         let alertVC = UIAlertController(title: "Erreur !", message: message, preferredStyle: .alert)
