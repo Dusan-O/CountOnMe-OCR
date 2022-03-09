@@ -89,7 +89,7 @@ class CalculatorTestCase: XCTestCase {
         calculator.tappedMultiplicateButton()
         calculator.tappedNumberButton(numberText: "4")
         calculator.operationResult()
-        XCTAssertEqual(calculator.textCalculator, "= 14")
+        XCTAssertEqual(calculator.textCalculator, "14")
     }
     // Test Divide by 0
     func testGivenWhenTextCalculatorIsEmpty_WhenAdding10DivideByO_ThenDivideByZeroIsTrue() {
